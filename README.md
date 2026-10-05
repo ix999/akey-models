@@ -3,16 +3,24 @@
 The files the Akey keyboard downloads when you tap to install its improved autocorrect or its language model on the
 phone. Akey checks every download against the size and SHA-256 it carries and uses nothing else.
 
-## The improved autocorrect, English
+## The improved autocorrect, English, second build
 
-`akey-autocorrect-en-v1.akc`: 41,849,154 bytes, SHA-256 `120df39563001866ff530b8e951317c1ec6adc72ea263335e4d66c4ed35354cf`.
+`akey-autocorrect-en-v2.akc`: 39,973,610 bytes, SHA-256 `26760160a7ba61410d364e5ead83e54f4bd8cfe0a700db1b17a0f383b81cbda4`.
 
 Two tables Akey's autocorrect reads by, in place of the word model it carries: how likely each word is after the two
 before it, counted from 17.8 million sentences of English web prose (Common Crawl's CC-MAIN-2022-21 and CC-MAIN-2022-40
-crawls, 54 of their text files) with Kneser-Ney's smoothing — 75,700 words, 1,724,144 pairs and 1,669,582 runs of three —
-and which words share a sentence more often than chance: 150,974 words of three letters or more, 4,820,742 pairs, each
-with how much more often (its pointwise mutual information), counted from 4.5 million sentences. The file holds counts
-alone, no text. Akey reads it where it lies, unpacked; it is built by Akey's own tools from the crawls' text.
+crawls, 54 of their text files) — 75,700 words, 1,724,144 pairs and 1,669,582 runs of three — and which words share a
+sentence more often than chance: 150,974 words of three letters or more, 4,820,742 pairs, each with how much more often
+(its pointwise mutual information), counted from 4.5 million sentences. The file holds counts alone, no text. Akey reads
+it where it lies, unpacked; it is built by Akey's own tools from the crawls' text. Every Akey build but the first with
+the improved autocorrect downloads this one.
+
+## The improved autocorrect, English, first build
+
+`akey-autocorrect-en-v1.akc`: 41,849,154 bytes, SHA-256 `120df39563001866ff530b8e951317c1ec6adc72ea263335e4d66c4ed35354cf`.
+
+The same counts, the word model's smoothed by Kneser-Ney's method, which made Akey's autocorrect change more right words
+once the next word was swiped. Kept for the one Akey build that downloads it.
 
 ## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, second build
 
