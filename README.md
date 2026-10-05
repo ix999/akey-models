@@ -1,7 +1,18 @@
 # Akey models
 
-The files the Akey keyboard downloads when you tap to install its language model on the phone. Akey checks every
-download against the size and SHA-256 it carries and uses nothing else.
+The files the Akey keyboard downloads when you tap to install its improved autocorrect or its language model on the
+phone. Akey checks every download against the size and SHA-256 it carries and uses nothing else.
+
+## The improved autocorrect, English
+
+`akey-autocorrect-en-v1.akc`: 41,849,154 bytes, SHA-256 `120df39563001866ff530b8e951317c1ec6adc72ea263335e4d66c4ed35354cf`.
+
+Two tables Akey's autocorrect reads by, in place of the word model it carries: how likely each word is after the two
+before it, counted from 17.8 million sentences of English web prose (Common Crawl's CC-MAIN-2022-21 and CC-MAIN-2022-40
+crawls, 54 of their text files) with Kneser-Ney's smoothing — 75,700 words, 1,724,144 pairs and 1,669,582 runs of three —
+and which words share a sentence more often than chance: 150,974 words of three letters or more, 4,820,742 pairs, each
+with how much more often (its pointwise mutual information), counted from 4.5 million sentences. The file holds counts
+alone, no text. Akey reads it where it lies, unpacked; it is built by Akey's own tools from the crawls' text.
 
 ## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, second build
 
