@@ -22,6 +22,22 @@ the improved autocorrect downloads this one.
 The same counts, the word model's smoothed by Kneser-Ney's method, which made Akey's autocorrect change more right words
 once the next word was swiped. Kept for the one Akey build that downloads it.
 
+## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, third build
+
+`smollm2-135m-sm8850-v3.1.bin` … `.4.bin`, joined in that order, are one QNN context binary: 197,148,672 bytes, SHA-256
+`6ec75f5d04fd64859409c523b62424c2d31cf43557b74d192de1b90d56973264` (the parts' own checksums are in `SHA256SUMS`).
+
+The model of the second build, at the same revision, compiled by the same SDK for the same NPU, with two inputs more:
+each of the 64 slots' place in its run and what it reads (a mask), where the second build's were fixed. Akey reads the
+runs a reading asks for as one tree in a single run — the sentence once, each reading of a word a branch after it —
+where each took a run of its own, and a run costs the NPU the same however few of its slots it fills. A sentence read
+alone, its slots in order, is read as the second build read it; the 16-bit ranges are set from sentences of Universal
+Dependencies' English Web Treebank (its test set; used only for the ranges, not shipped). Read over 42 example
+sentences against the model in full precision, a pair of readings' margin strays 0.15 nats on average (0.48 at most),
+as the second build's did, and none changes order; a sentence read packed with others reads within 0.1 nats of the same
+sentence read alone (0.014 on average), the 16-bit rounding falling otherwise where its slots lie — the slots it does
+not read add nothing. Akey's builds from 2026-10-08 on download this one.
+
 ## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, second build
 
 `smollm2-135m-sm8850-v2.1.bin` … `.4.bin`, joined in that order, are one QNN context binary: 197,144,576 bytes, SHA-256
@@ -34,7 +50,7 @@ once, ahead, its keys, values and log-probabilities constants of the graph, whic
 calibration's runs are filled out with spaces rather than start tokens, and each row of weights is rounded to 8 bits at
 the scale that keeps the most signal over the rounding (QAIRT's `sqnr` calibration). Read over 42 example sentences
 against the model in full precision, a pair of readings' margin strays 0.15 nats on average (the first build's 0.40),
-and none changes order. Akey's builds from 2026-10-05 on download this one.
+and none changes order. Akey's builds from 2026-10-05 to 2026-10-08 download this one.
 
 ## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, first build
 
