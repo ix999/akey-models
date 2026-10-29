@@ -36,6 +36,17 @@ it, from the second with the improved autocorrect to the one before the third bu
 The same counts, the word model's smoothed by Kneser-Ney's method, which made Akey's autocorrect change more right words
 once the next word was swiped. Kept for the one Akey build that downloads it.
 
+## SmolLM2-135M for the CPU
+
+`smollm2-135m-q8.aklm.1` … `.5`, joined in that order, are one file: 152,746,120 bytes, SHA-256
+`0e29f49104d29e744e9f7b42d8a2f91f62a16b033f05b9ad5b01b82a62304546` (the parts' own checksums are in `SHA256SUMS`).
+
+The model Akey's language pack carries for the CPU, for a phone with no language pack, whose NPU the pack's runtime does
+not reach: SmolLM2-135M at revision `93efa2f097d58c2a74874c7e644dbc9b0cee75a2`, its linear layers' weights and its
+embedding rounded to 8 bits each, its norms kept as 32-bit floats, with its tokenizer — Akey's own format ("AKLM"),
+written by Akey's own converter, read by Akey's own code where it lies. Akey's builds from 2026-10-29 on download this one
+where no language pack is installed.
+
 ## SmolLM2-135M for the Snapdragon 8 Elite Gen 5's NPU, third build
 
 `smollm2-135m-sm8850-v3.1.bin` … `.4.bin`, joined in that order, are one QNN context binary: 197,148,672 bytes, SHA-256
@@ -81,4 +92,4 @@ GitHub's 100 MB limit.
 ## Licence
 
 SmolLM2-135M is © Hugging Face, under the Apache License 2.0 (`LICENSE`). These files are a derivative of it, changed as
-described above: its weights rounded and compiled for the NPU.
+described above: its weights rounded, and for the NPU compiled for it.
