@@ -3,6 +3,19 @@
 The files the Akey keyboard downloads when you tap to install its improved autocorrect or its language model on the
 phone. Akey checks every download against the size and SHA-256 it carries and uses nothing else.
 
+## The improved autocorrect, English, third build
+
+`akey-autocorrect-en-v3.akc`: 99,683,919 bytes, SHA-256 `0188b6d4cc8b430b71056f274472e383e6e44c5ecd13fb44f517de6fae93b279`.
+
+Three tables Akey's autocorrect reads by, all counted from 66.4 million sentences of English web prose (1.29 billion
+words; 281 text files of six Common Crawl crawls, CC-MAIN-2022-40 to CC-MAIN-2025-30): how likely each word is after the
+two before it, in place of the word model Akey carries — 98,360 words, 4,359,967 pairs and 6,164,568 runs of three;
+which words share a sentence more often than chance — 184,579 words of three letters or more, 7,484,622 pairs, each with
+its pointwise mutual information; and a grammar model in place of the one Akey carries — the tags of 599,934 words,
+348,241 pairs and 4,604,213 runs of three tags. The file holds counts alone, no text. Akey reads the first two where
+they lie and inflates the third as it installs it; it is built by Akey's own tools from the crawls' text. Every Akey
+build from the one that brought it downloads this one.
+
 ## The improved autocorrect, English, second build
 
 `akey-autocorrect-en-v2.akc`: 39,973,610 bytes, SHA-256 `26760160a7ba61410d364e5ead83e54f4bd8cfe0a700db1b17a0f383b81cbda4`.
@@ -12,8 +25,8 @@ before it, counted from 17.8 million sentences of English web prose (Common Craw
 crawls, 54 of their text files) — 75,700 words, 1,724,144 pairs and 1,669,582 runs of three — and which words share a
 sentence more often than chance: 150,974 words of three letters or more, 4,820,742 pairs, each with how much more often
 (its pointwise mutual information), counted from 4.5 million sentences. The file holds counts alone, no text. Akey reads
-it where it lies, unpacked; it is built by Akey's own tools from the crawls' text. Every Akey build but the first with
-the improved autocorrect downloads this one.
+it where it lies, unpacked; it is built by Akey's own tools from the crawls' text. Kept for the Akey builds that download
+it, from the second with the improved autocorrect to the one before the third build.
 
 ## The improved autocorrect, English, first build
 
