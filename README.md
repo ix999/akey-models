@@ -5,12 +5,13 @@ phone. Akey checks every download against the size and SHA-256 it carries and us
 
 ## The improved autocorrect, English, third build
 
-`akey-autocorrect-en-v3.akc`: 99,683,919 bytes, SHA-256 `0188b6d4cc8b430b71056f274472e383e6e44c5ecd13fb44f517de6fae93b279`.
+`akey-autocorrect-en-v3.akc.1` … `.3`, joined in that order, are one file: 107,510,311 bytes, SHA-256
+`52fc0eee380a0720ade6b238434c7987bb02a29868d4a00e7dec11534e06f8d2` (the parts' own checksums are in `SHA256SUMS`).
 
 Three tables Akey's autocorrect reads by, all counted from 66.4 million sentences of English web prose (1.29 billion
 words; 281 text files of six Common Crawl crawls, CC-MAIN-2022-40 to CC-MAIN-2025-30): how likely each word is after the
 two before it, in place of the word model Akey carries — 98,360 words, 4,359,967 pairs and 6,164,568 runs of three;
-which words share a sentence more often than chance — 184,579 words of three letters or more, 7,484,622 pairs, each with
+which words share a sentence more often than chance — 184,579 words of three letters or more, 9,441,219 pairs, each with
 its pointwise mutual information; and a grammar model in place of the one Akey carries — the tags of 599,934 words,
 348,241 pairs and 4,604,213 runs of three tags. The file holds counts alone, no text. Akey reads the first two where
 they lie and inflates the third as it installs it; it is built by Akey's own tools from the crawls' text. Every Akey
