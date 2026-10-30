@@ -36,6 +36,17 @@ it, from the second with the improved autocorrect to the one before the third bu
 The same counts, the word model's smoothed by Kneser-Ney's method, which made Akey's autocorrect change more right words
 once the next word was swiped. Kept for the one Akey build that downloads it.
 
+## SmolLM2-135M for the GPU
+
+`smollm2-135m-gpu.tflite.1` … `.4`, joined in that order, are one file: 137,430,640 bytes, SHA-256
+`796fd514b94683dcf857309e768a952f1c6c7a30d46b3d282c58b53eef20bd56` (the parts' own checksums are in `SHA256SUMS`).
+
+SmolLM2-135M at revision `93efa2f097d58c2a74874c7e644dbc9b0cee75a2` as one LiteRT graph of the NPU build's fixed shape, for
+a phone's GPU — the Pixel 8 Pro's first — run by Google's LiteRT, which Akey's language pack for the GPU carries: its
+weights rounded as the CPU model's are (8 bits a group of 32), then stored at 8 bits a row and read as 16-bit floats on the
+GPU; the embedding the graph reads in is the CPU model's, given it by Akey. Written by Akey's `tools/gpu/export.py`. Akey's
+builds from 2026-10-30 on download this one where the pack for the GPU is installed.
+
 ## SmolLM2-135M for the CPU
 
 `smollm2-135m-q8.aklm.1` … `.5`, joined in that order, are one file: 152,746,120 bytes, SHA-256
